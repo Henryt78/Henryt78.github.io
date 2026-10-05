@@ -1,0 +1,30 @@
+title: "Tu es einfach"
+description: "Long Form Jekyll theme built with SASS / COMPASS / SUSY"
+
+url: "https://henryt78.github.io"
+baseurl: ""
+paginate_path: "blog/page:num/"
+permalink: blog/:title/
+
+
+highlighter: rouge
+gems: [jekyll-paginate]
+paginate: 5
+
+navigation:
+ - title: Home
+   url: /index.html
+ - title: About
+   url: /about
+ - title: Contact
+   url: /contact
+ - title: Impressum
+   url: /impressum
+
+social:
+   github: henryt78
+   twitter: henryt78
+   facebook: 
+   email: info@sticktrix.de
+
+#google_analytics: "UA-58263416-1"
