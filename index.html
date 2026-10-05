@@ -1,26 +1,125 @@
----
-layout: default
-title: TU ES EINFACH
----
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tu es einfach</title>
+<meta name="description" content="Kleine Impulse, damit aus Vorhaben Taten werden. Kurze Texte über Anfangen, Dranbleiben und Mini-Gewohnheiten.">
+<link rel="canonical" href="https://www.tueseinfach.com/">
+<meta property="og:title" content="Tu es einfach">
+<meta property="og:description" content="Kleine Impulse, damit aus Vorhaben Taten werden. Kurze Texte über Anfangen, Dranbleiben und Mini-Gewohnheiten.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.tueseinfach.com/">
+<meta name="theme-color" content="#FBF8F3">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt</a>
+<header class="kopf">
+  <a class="logo" href="/">Tu es einfach<span>.</span></a>
+  <nav><a href="/#impulse">Impulse</a><a href="/ueber/">Über</a></nav>
+</header>
+<main id="inhalt">
 
-<div class="home" id="home">
-  <h1 class="pageTitle">Aktuelle Einträge</h1>
-  <ul class="posts noList">
-    {% for post in paginator.posts %}
-      <li>
-        <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
-        <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-        <p class="description">{% if post.description %}{{ post.description | strip_html | strip_newlines | truncate: 250 }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 250 }}{% endif %}</p>
-      </li>
-    {% endfor %}
+<section class="held">
+  <p class="vorspann">Ein Impuls. Ein erster Schritt.</p>
+  <h1>Tu es <em>einfach.</em></h1>
+  <p class="lead">Kleine Impulse, damit aus Vorhaben Taten werden.<br>Kurze Texte über das Anfangen, Dranbleiben und Leichtnehmen. Zum Lesen in drei Minuten, zum Tun in einer.</p>
+  <a class="knopf" href="#impulse">Zu den Impulsen</a>
+</section>
+
+<section class="heute" id="heute" data-impulse='[{&quot;slug&quot;:&quot;der-erste-schritt&quot;,&quot;title&quot;:&quot;Der erste Schritt&quot;,&quot;zitat&quot;:&quot;Auch wenn es nur eine Minute ist: Dieser Moment kann alles verändern.&quot;,&quot;kategorie&quot;:&quot;Anfangen&quot;},{&quot;slug&quot;:&quot;analog-vs-digital&quot;,&quot;title&quot;:&quot;Analog vs. Digital&quot;,&quot;zitat&quot;:&quot;Es gibt nur 0 und 1. Und 1 reicht.&quot;,&quot;kategorie&quot;:&quot;Anfangen&quot;},{&quot;slug&quot;:&quot;der-bambusstrauch&quot;,&quot;title&quot;:&quot;Der Bambus&quot;,&quot;zitat&quot;:&quot;Wie willst du wissen, dass nicht schon der nächste Tag der entscheidende gewesen wäre?&quot;,&quot;kategorie&quot;:&quot;Dranbleiben&quot;},{&quot;slug&quot;:&quot;erfolg-hat-3-buchstaben&quot;,&quot;title&quot;:&quot;Erfolg hat drei Buchstaben&quot;,&quot;zitat&quot;:&quot;Die Motivation kommt mit dem Tun, nicht davor.&quot;,&quot;kategorie&quot;:&quot;Mini-Gewohnheiten&quot;},{&quot;slug&quot;:&quot;was-heisst-eigentlich-schwer&quot;,&quot;title&quot;:&quot;Was heißt eigentlich „schwer“?&quot;,&quot;zitat&quot;:&quot;Nichts ist schwer. Es ist nur noch nicht geübt.&quot;,&quot;kategorie&quot;:&quot;Denken&quot;},{&quot;slug&quot;:&quot;aufschieben-oder-sofort-machen&quot;,&quot;title&quot;:&quot;Aufschieben oder sofort machen?&quot;,&quot;zitat&quot;:&quot;Die meisten Dinge dauern gar nicht so lange, wie wir denken.&quot;,&quot;kategorie&quot;:&quot;Anfangen&quot;},{&quot;slug&quot;:&quot;gib-niemals-auf&quot;,&quot;title&quot;:&quot;Gib niemals auf&quot;,&quot;zitat&quot;:&quot;Jede große Tat beginnt mit dem ersten Schritt.&quot;,&quot;kategorie&quot;:&quot;Dranbleiben&quot;},{&quot;slug&quot;:&quot;wo-ist-deine-trennlinie&quot;,&quot;title&quot;:&quot;Wo ist deine Trennlinie?&quot;,&quot;zitat&quot;:&quot;Man ist immer nur so erfolgreich, wie die eigene Messlatte hoch liegt.&quot;,&quot;kategorie&quot;:&quot;Denken&quot;},{&quot;slug&quot;:&quot;nicht-genug&quot;,&quot;title&quot;:&quot;Nicht genug&quot;,&quot;zitat&quot;:&quot;Alles, was du hast und bist, ist vielleicht schon lange gut genug.&quot;,&quot;kategorie&quot;:&quot;Gelassenheit&quot;},{&quot;slug&quot;:&quot;tu-es-einfach-nicht-schwer-nicht-zweifach&quot;,&quot;title&quot;:&quot;Tu es einfach, nicht schwer oder zweifach&quot;,&quot;zitat&quot;:&quot;Einfach heißt leicht, locker, unbeschwert, direkt, entspannt, frei.&quot;,&quot;kategorie&quot;:&quot;Denken&quot;}]'>
+  <p class="kicker">Impuls des Tages</p>
+  <blockquote id="heute-zitat">Auch wenn es nur eine Minute ist: Dieser Moment kann alles verändern.</blockquote>
+  <p><a id="heute-link" class="weiter" href="/impuls/der-erste-schritt/">Der erste Schritt lesen →</a></p>
+</section>
+
+<section class="liste" id="impulse">
+  <h2>Alle Impulse</h2>
+  <ul class="karten">
+  <li><a class="karte" href="/impuls/der-erste-schritt/">
+    <span class="nr">01</span>
+    <span class="kat">Anfangen</span>
+    <h3>Der erste Schritt</h3>
+    <p>Auch wenn es nur eine Minute ist: Dieser Moment kann alles verändern.</p>
+    <span class="min">1 Min. Lesezeit</span>
+  </a></li>
+  <li><a class="karte" href="/impuls/analog-vs-digital/">
+    <span class="nr">02</span>
+    <span class="kat">Anfangen</span>
+    <h3>Analog vs. Digital</h3>
+    <p>Es gibt nur 0 und 1. Und 1 reicht.</p>
+    <span class="min">2 Min. Lesezeit</span>
+  </a></li>
+  <li><a class="karte" href="/impuls/der-bambusstrauch/">
+    <span class="nr">03</span>
+    <span class="kat">Dranbleiben</span>
+    <h3>Der Bambus</h3>
+    <p>Wie willst du wissen, dass nicht schon der nächste Tag der entscheidende gewesen wäre?</p>
+    <span class="min">2 Min. Lesezeit</span>
+  </a></li>
+  <li><a class="karte" href="/impuls/erfolg-hat-3-buchstaben/">
+    <span class="nr">04</span>
+    <span class="kat">Mini-Gewohnheiten</span>
+    <h3>Erfolg hat drei Buchstaben</h3>
+    <p>Die Motivation kommt mit dem Tun, nicht davor.</p>
+    <span class="min">2 Min. Lesezeit</span>
+  </a></li>
+  <li><a class="karte" href="/impuls/was-heisst-eigentlich-schwer/">
+    <span class="nr">05</span>
+    <span class="kat">Denken</span>
+    <h3>Was heißt eigentlich „schwer“?</h3>
+    <p>Nichts ist schwer. Es ist nur noch nicht geübt.</p>
+    <span class="min">2 Min. Lesezeit</span>
+  </a></li>
+  <li><a class="karte" href="/impuls/aufschieben-oder-sofort-machen/">
+    <span class="nr">06</span>
+    <span class="kat">Anfangen</span>
+    <h3>Aufschieben oder sofort machen?</h3>
+    <p>Die meisten Dinge dauern gar nicht so lange, wie wir denken.</p>
+    <span class="min">2 Min. Lesezeit</span>
+  </a></li>
+  <li><a class="karte" href="/impuls/gib-niemals-auf/">
+    <span class="nr">07</span>
+    <span class="kat">Dranbleiben</span>
+    <h3>Gib niemals auf</h3>
+    <p>Jede große Tat beginnt mit dem ersten Schritt.</p>
+    <span class="min">1 Min. Lesezeit</span>
+  </a></li>
+  <li><a class="karte" href="/impuls/wo-ist-deine-trennlinie/">
+    <span class="nr">08</span>
+    <span class="kat">Denken</span>
+    <h3>Wo ist deine Trennlinie?</h3>
+    <p>Man ist immer nur so erfolgreich, wie die eigene Messlatte hoch liegt.</p>
+    <span class="min">2 Min. Lesezeit</span>
+  </a></li>
+  <li><a class="karte" href="/impuls/nicht-genug/">
+    <span class="nr">09</span>
+    <span class="kat">Gelassenheit</span>
+    <h3>Nicht genug</h3>
+    <p>Alles, was du hast und bist, ist vielleicht schon lange gut genug.</p>
+    <span class="min">1 Min. Lesezeit</span>
+  </a></li>
+  <li><a class="karte" href="/impuls/tu-es-einfach-nicht-schwer-nicht-zweifach/">
+    <span class="nr">10</span>
+    <span class="kat">Denken</span>
+    <h3>Tu es einfach, nicht schwer oder zweifach</h3>
+    <p>Einfach heißt leicht, locker, unbeschwert, direkt, entspannt, frei.</p>
+    <span class="min">2 Min. Lesezeit</span>
+  </a></li>
   </ul>
-  <!-- Pagination links -->
-  <div class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous button__outline">Newer Posts</a> 
-    {% endif %}
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next button__outline">Older Posts</a>
-    {% endif %}
-  </div>
-</div>
+</section>
+
+<section class="mehr">
+  <h2>Mehr davon?</h2>
+  <p>Weitere Texte folgen laufend. Ein Newsletter mit einem Impuls pro Woche ist geplant.</p>
+</section>
+</main>
+<footer class="fuss">
+  <p class="fuss-motto">Tu es einfach. Auch wenn es nur eine Minute ist.</p>
+  <p><a href="/ueber/">Über</a> · <a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></p>
+</footer>
+<script src="/assets/app.js" defer></script>
+</body>
+</html>

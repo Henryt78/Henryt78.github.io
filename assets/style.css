@@ -1,0 +1,119 @@
+:root {
+  --bg: #FBF8F3;
+  --karte: #FFFFFF;
+  --tinte: #2A2926;
+  --leise: #78746C;
+  --linie: #E8E2D6;
+  --akzent: #5E8467;
+  --akzent-dunkel: #476A50;
+  --akzent-hell: #E6EEE6;
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1B1D1A; --karte: #232621; --tinte: #ECE8DF; --leise: #A19D93;
+    --linie: #34382F; --akzent: #8FB898; --akzent-dunkel: #A9CDB1; --akzent-hell: #28322A;
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--tinte);
+  font: 1.125rem/1.75 var(--serif);
+}
+a { color: var(--akzent-dunkel); text-underline-offset: 3px; }
+a:hover { color: var(--akzent); }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 1rem; top: 1rem; background: var(--karte); padding: .5rem 1rem; z-index: 10; }
+
+/* Kopf / Fuß */
+.kopf {
+  max-width: 62rem; margin: 0 auto; padding: 1.25rem 1.25rem;
+  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+}
+.logo { font: 700 1.25rem var(--serif); color: var(--tinte); text-decoration: none; letter-spacing: -.01em; }
+.logo span { color: var(--akzent); }
+.kopf nav { display: flex; gap: 1.5rem; font: .95rem var(--sans); }
+.kopf nav a { color: var(--leise); text-decoration: none; }
+.kopf nav a:hover { color: var(--tinte); }
+.fuss { max-width: 62rem; margin: 5rem auto 0; padding: 2rem 1.25rem 3rem; border-top: 1px solid var(--linie); font: .9rem var(--sans); color: var(--leise); text-align: center; }
+.fuss a { color: var(--leise); }
+.fuss-motto { font: italic 1.05rem var(--serif); color: var(--tinte); margin: 0 0 .75rem; }
+
+main { max-width: 62rem; margin: 0 auto; padding: 0 1.25rem; }
+
+/* Startseite: Held */
+.held { text-align: center; padding: clamp(3rem, 9vw, 6.5rem) 0 3rem; max-width: 40rem; margin: 0 auto; }
+.vorspann, .kicker { font: 600 .8rem var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--akzent-dunkel); margin: 0 0 1rem; }
+.held h1 { font: 700 clamp(2.8rem, 9vw, 5rem)/1.05 var(--serif); letter-spacing: -.03em; margin: 0 0 1.5rem; }
+.held h1 em { font-style: italic; color: var(--akzent); }
+.lead { font-size: 1.25rem; color: var(--leise); margin: 0 0 2rem; }
+.knopf {
+  display: inline-block; font: 600 1rem var(--sans); background: var(--akzent-dunkel); color: #fff;
+  padding: .8rem 1.6rem; border-radius: 999px; text-decoration: none; border: 0; cursor: pointer;
+  transition: background .15s, transform .15s;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .knopf { color: #14180f; background: var(--akzent); } }
+.knopf:hover { background: var(--akzent); color: #fff; transform: translateY(-1px); }
+
+/* Impuls des Tages */
+.heute {
+  max-width: 40rem; margin: 1rem auto 4rem; padding: 2rem 1.75rem; text-align: center;
+  background: var(--akzent-hell); border-radius: 1.25rem;
+}
+.heute blockquote { font: italic 1.6rem/1.4 var(--serif); margin: 0 0 1rem; }
+.weiter { font: 600 .95rem var(--sans); }
+
+/* Karten */
+.liste h2, .mehr h2 { font: 700 1.6rem var(--serif); margin: 0 0 1.5rem; }
+.karten { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1.1rem; }
+.karte {
+  position: relative; display: flex; flex-direction: column; height: 100%;
+  background: var(--karte); border: 1px solid var(--linie); border-radius: 1rem;
+  padding: 1.4rem 1.4rem 1.2rem; text-decoration: none; color: var(--tinte);
+  transition: transform .15s, border-color .15s, box-shadow .15s;
+}
+.karte:hover { transform: translateY(-3px); border-color: var(--akzent); box-shadow: 0 8px 24px rgba(60, 80, 60, .08); color: var(--tinte); }
+.karte .nr { position: absolute; top: 1rem; right: 1.2rem; font: 700 .85rem var(--sans); color: var(--linie); }
+.karte .kat, .impuls .kat { font: 600 .75rem var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--akzent-dunkel); }
+.karte h3 { font: 700 1.3rem/1.25 var(--serif); margin: .5rem 0 .6rem; }
+.karte p { margin: 0 0 1rem; color: var(--leise); font-size: 1rem; line-height: 1.55; flex: 1; }
+.karte .min { font: .8rem var(--sans); color: var(--leise); }
+.mehr { text-align: center; margin: 4.5rem auto 0; max-width: 34rem; color: var(--leise); }
+
+/* Einzelner Impuls */
+.impuls { max-width: 38rem; margin: 0 auto; padding: 1.5rem 0 0; }
+.impuls .kat { margin: 0 0 1rem; }
+.impuls .kat a { color: inherit; text-decoration: none; }
+.impuls h1 { font: 700 clamp(2.1rem, 6vw, 3rem)/1.12 var(--serif); letter-spacing: -.02em; margin: 0 0 1.25rem; }
+.zitat { font: italic 1.3rem/1.45 var(--serif); color: var(--akzent-dunkel); border-left: 3px solid var(--akzent); padding-left: 1.1rem; margin: 0 0 2.5rem; }
+.text p, .text li { font-size: 1.2rem; line-height: 1.8; }
+.text p { margin: 0 0 1.35rem; }
+.text h2 { font: 700 1.5rem/1.3 var(--serif); margin: 2.6rem 0 1rem; }
+.text ul, .text ol { padding-left: 1.4rem; margin: 0 0 1.5rem; }
+.text li { margin-bottom: .45rem; }
+.text li::marker { color: var(--akzent); }
+.text strong { font-weight: 700; }
+.tabelle { overflow-x: auto; margin: 0 0 1.5rem; }
+table { border-collapse: collapse; width: 100%; font-size: 1.05rem; line-height: 1.5; }
+th, td { text-align: left; padding: .7rem .8rem; border-bottom: 1px solid var(--linie); vertical-align: top; }
+th { font: 600 .8rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--leise); }
+td:last-child { color: var(--akzent-dunkel); font-weight: 600; }
+
+.aktion { margin: 3rem 0; padding: 1.75rem; background: var(--akzent-hell); border-radius: 1rem; text-align: center; }
+.aktion .mini { margin: 0 0 1rem; font-size: 1.15rem; }
+.blaettern { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--linie); padding-top: 1.5rem; margin-top: 1rem; }
+.blaettern a { display: block; text-decoration: none; color: var(--tinte); font: 700 1.05rem/1.3 var(--serif); max-width: 48%; }
+.blaettern a span { display: block; font: 600 .75rem var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--akzent-dunkel); margin-bottom: .2rem; }
+.blaettern .rechts { text-align: right; margin-left: auto; }
+
+:focus-visible { outline: 3px solid var(--akzent); outline-offset: 3px; border-radius: 4px; }
+
+@media (max-width: 30rem) {
+  body { font-size: 1.05rem; }
+  .text p, .text li { font-size: 1.12rem; }
+  .heute blockquote { font-size: 1.35rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
