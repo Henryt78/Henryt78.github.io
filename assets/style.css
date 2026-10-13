@@ -1,9 +1,9 @@
 :root {
-  --bg: #FBF8F3;
+  --bg: #FEFDFB;
   --karte: #FFFFFF;
   --tinte: #2A2926;
   --leise: #78746C;
-  --linie: #E8E2D6;
+  --linie: #ECE8E0;
   --akzent: #5E8467;
   --akzent-dunkel: #476A50;
   --akzent-hell: #E6EEE6;
@@ -33,7 +33,7 @@ a:hover { color: var(--akzent); }
   max-width: 62rem; margin: 0 auto; padding: 1.25rem 1.25rem;
   display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
 }
-.logo { font: 700 1.25rem var(--serif); color: var(--tinte); text-decoration: none; letter-spacing: -.01em; }
+.logo { display: inline-flex; align-items: center; gap: .55rem; font: 700 1.25rem var(--serif); color: var(--tinte); text-decoration: none; letter-spacing: -.01em; }
 .logo span { color: var(--akzent); }
 .kopf nav { display: flex; gap: 1.5rem; font: .95rem var(--sans); }
 .kopf nav a { color: var(--leise); text-decoration: none; }
@@ -118,3 +118,5 @@ td:last-child { color: var(--akzent-dunkel); font-weight: 600; }
   .heute blockquote { font-size: 1.35rem; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+.logo svg { width: 1.9rem; height: 1.9rem; flex: none; }
