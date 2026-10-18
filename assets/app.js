@@ -29,15 +29,23 @@
   }
 })();
 
-// Anmeldung: Brevo antwortet mit JSON, nicht mit einer HTML-Seite.
-// Deshalb gehen wir nach Erfolg selbst auf /bitte-bestaetigen/.
-// Liegt in Brevo eine Weiterleitung auf tueseinfach.com, nehmen wir die.
+// Anmeldung: Brevo liefert JSON nur mit isAjax=1 an der Action-URL,
+// so wie das eigene Formular-Skript. Ohne den Parameter kommt eine
+// Weiterleitung oder HTML, und antwort.json() wirft dann.
+// Nach Erfolg gehen wir selbst auf /bitte-bestaetigen/.
+// Liegt in der JSON-Antwort eine Weiterleitung auf tueseinfach.com, nehmen wir die.
+// Eine ok-Antwort, die kein JSON ist, gilt ebenfalls als Erfolg.
 (function () {
   var formulare = document.querySelectorAll('.anmeldung-form');
   if (!formulare.length) return;
 
   function eigenesZiel(url) {
     return typeof url === 'string' && /^https:\/\/(www\.)?tueseinfach\.com\//.test(url);
+  }
+
+  function ajaxAdresse(action) {
+    if (!action) return action;
+    return action + (action.indexOf('?') === -1 ? '?' : '&') + 'isAjax=1';
   }
 
   function zeigFehler(form, text) {
@@ -61,14 +69,19 @@
       var vorher = knopf.textContent;
       knopf.disabled = true;
       knopf.textContent = 'Wird gesendet …';
-      fetch(form.getAttribute('action'), {
+      fetch(ajaxAdresse(form.getAttribute('action')), {
         method: 'POST',
         body: new FormData(form),
         mode: 'cors',
         credentials: 'omit',
         headers: { 'Accept': 'application/json' }
       }).then(function (antwort) {
-        return antwort.json().then(function (daten) { return daten || {}; });
+        return antwort.json().then(function (daten) {
+          return daten || {};
+        }).catch(function () {
+          if (antwort.ok) return { success: true };
+          throw new Error('Antwort ohne JSON');
+        });
       }).then(function (daten) {
         if (daten.success) {
           window.location.href = eigenesZiel(daten.redirect) ? daten.redirect : '/bitte-bestaetigen/';
