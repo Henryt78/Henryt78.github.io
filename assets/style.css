@@ -120,3 +120,66 @@ td:last-child { color: var(--akzent-dunkel); font-weight: 600; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
 
 .logo svg { width: 1.9rem; height: 1.9rem; flex: none; }
+
+/* Newsletter-Anmeldebox */
+.anmeldung {
+  max-width: 40rem; margin: 4.5rem auto 0; padding: 2.25rem 1.75rem;
+  text-align: center; background: var(--akzent-hell); border-radius: 1.25rem;
+}
+.anmeldung--kurz { margin-top: 3rem; }
+.anmeldung--eingebettet { margin: 0; max-width: none; width: 100%; }
+.anmeldung h2 { font: 700 clamp(1.8rem, 5vw, 2.4rem)/1.15 var(--serif); margin: 0 0 .75rem; }
+.anmeldung h2 em { font-style: italic; color: var(--akzent); }
+.anmeldung-text { color: var(--leise); margin: 0 auto 1.5rem; max-width: 32rem; font-size: 1.05rem; }
+.anmeldung-video { margin: -.35rem 0 1.35rem; }
+.anmeldung-form { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; }
+.anmeldung-form input[type="email"] {
+  flex: 1 1 14rem; min-width: 0; font: 1rem var(--sans); color: var(--tinte);
+  background: var(--karte); border: 1px solid var(--linie); border-radius: 999px; padding: .8rem 1.2rem;
+}
+.anmeldung-form input[type="email"]:focus { outline: 2px solid var(--akzent); outline-offset: 1px; border-color: var(--akzent); }
+.anmeldung-form .knopf { flex: 0 0 auto; }
+.anmeldung-form .knopf:disabled { opacity: .65; cursor: wait; transform: none; }
+.anmeldung-klein { font: .8rem/1.5 var(--sans); color: var(--leise); margin: 1rem auto 0; max-width: 32rem; }
+.anmeldung-fehler { font: .9rem/1.45 var(--sans); color: #8a3b32; margin: .85rem auto 0; max-width: 32rem; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .anmeldung-fehler { color: #f0b4ac; }
+}
+.unsichtbar {
+  position: absolute !important; width: 1px !important; height: 1px !important;
+  padding: 0 !important; margin: -1px !important; overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important; clip-path: inset(50%) !important;
+  white-space: nowrap !important; border: 0 !important;
+}
+@media (max-width: 34rem) { .anmeldung-form .knopf { width: 100%; } }
+
+/* Landing /gratis/: Hochformat-Teaser neben der Anmeldung */
+.gratis { padding-top: clamp(1.25rem, 4vw, 2.75rem); }
+.gratis-kopf { text-align: center; max-width: 36rem; margin: 0 auto 1.75rem; }
+.gratis-kopf h1 { font: 700 clamp(2.2rem, 6vw, 3.4rem)/1.08 var(--serif); letter-spacing: -.02em; margin: 0 0 .75rem; }
+.gratis-kopf h1 em { font-style: italic; color: var(--akzent); }
+.gratis-kopf p { color: var(--leise); margin: 0; font-size: 1.15rem; }
+.gratis-buehne {
+  display: grid; grid-template-columns: 20rem minmax(0, 32rem);
+  justify-content: center; gap: 1.5rem 2rem; align-items: center;
+  max-width: 54rem; margin: 0 auto;
+}
+.teaser-rahmen {
+  width: 20rem; max-width: 100%;
+  margin: 0 auto; padding: 0; overflow: hidden; border-radius: 1.25rem;
+}
+.teaser {
+  display: block; width: 100%; height: auto; aspect-ratio: 9 / 16;
+  border-radius: 1.25rem; background: #efe6d4;
+  box-shadow: 0 12px 32px rgba(40, 50, 40, .12);
+}
+@media (max-width: 58rem) {
+  .gratis { padding-top: .25rem; }
+  .gratis-kopf { margin-bottom: .75rem; }
+  .gratis-kopf h1 { font-size: clamp(1.85rem, 8vw, 2.2rem); margin-bottom: .4rem; }
+  .gratis-kopf .kicker { margin-bottom: .45rem; }
+  .gratis-kopf p { font-size: 1rem; line-height: 1.45; }
+  .gratis-buehne { grid-template-columns: minmax(0, 1fr); justify-items: center; }
+  .gratis-buehne .anmeldung { width: min(100%, 36rem); }
+  .teaser-rahmen { width: min(56vw, 10.5rem); }
+}
