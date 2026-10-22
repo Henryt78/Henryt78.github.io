@@ -31,11 +31,11 @@ a:hover { color: var(--akzent); }
 /* Kopf / Fuß */
 .kopf {
   max-width: 62rem; margin: 0 auto; padding: 1.25rem 1.25rem;
-  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 1rem;
 }
 .logo { display: inline-flex; align-items: center; gap: .55rem; font: 700 1.25rem var(--serif); color: var(--tinte); text-decoration: none; letter-spacing: -.01em; }
 .logo span { color: var(--akzent); }
-.kopf nav { display: flex; gap: 1.5rem; font: .95rem var(--sans); }
+.kopf nav { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; font: .95rem var(--sans); }
 .kopf nav a { color: var(--leise); text-decoration: none; }
 .kopf nav a:hover { color: var(--tinte); }
 .fuss { max-width: 62rem; margin: 5rem auto 0; padding: 2rem 1.25rem 3rem; border-top: 1px solid var(--linie); font: .9rem var(--sans); color: var(--leise); text-align: center; }
@@ -92,6 +92,8 @@ main { max-width: 62rem; margin: 0 auto; padding: 0 1.25rem; }
 .text p, .text li { font-size: 1.2rem; line-height: 1.8; }
 .text p { margin: 0 0 1.35rem; }
 .text h2 { font: 700 1.5rem/1.3 var(--serif); margin: 2.6rem 0 1rem; }
+.text h3 { font: 700 1.22rem/1.35 var(--serif); margin: 1.7rem 0 .5rem; }
+.text h2 + h3 { margin-top: .35rem; }
 .text ul, .text ol { padding-left: 1.4rem; margin: 0 0 1.5rem; }
 .text li { margin-bottom: .45rem; }
 .text li::marker { color: var(--akzent); }
@@ -101,6 +103,19 @@ table { border-collapse: collapse; width: 100%; font-size: 1.05rem; line-height:
 th, td { text-align: left; padding: .7rem .8rem; border-bottom: 1px solid var(--linie); vertical-align: top; }
 th { font: 600 .8rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--leise); }
 td:last-child { color: var(--akzent-dunkel); font-weight: 600; }
+@media (max-width: 42rem) {
+  .tabelle-breit table { min-width: 40rem; }
+}
+.tabelle-breit td:last-child { color: inherit; font-weight: inherit; }
+.tabelle-breit td:nth-child(2) { color: var(--akzent-dunkel); font-weight: 600; }
+.antwort {
+  background: var(--akzent-hell); border-radius: 1rem;
+  padding: 1.2rem 1.35rem 1.25rem; margin: 0 0 2.2rem;
+}
+.antwort p { margin: 0; font-size: 1.15rem; line-height: 1.65; }
+.antwort .kicker { margin-bottom: .55rem; }
+.text .quellen { padding-left: 1.2rem; }
+.text .quellen li { font-size: 1rem; line-height: 1.6; margin-bottom: .75rem; }
 
 .aktion { margin: 3rem 0; padding: 1.75rem; background: var(--akzent-hell); border-radius: 1rem; text-align: center; }
 .aktion .mini { margin: 0 0 1rem; font-size: 1.15rem; }
