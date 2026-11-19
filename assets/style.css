@@ -213,21 +213,12 @@ td:last-child { color: var(--akzent-dunkel); font-weight: 600; }
 .grund .kicker { margin-bottom: .4rem; }
 .grund h2 { font: 700 1.55rem/1.25 var(--serif); letter-spacing: -.015em; margin: 0 0 1rem; }
 .grund p:last-child { margin: 0; }
-.bildplatz { margin: 0 0 1rem; }
-.bildplatz-rahmen {
-  display: flex; align-items: center; justify-content: center; text-align: center;
-  aspect-ratio: 3 / 2; border-radius: 1rem;
-  border: 1px dashed var(--akzent);
-  background:
-    radial-gradient(120% 90% at 100% 0%, var(--akzent-hell), transparent 58%),
-    var(--karte);
-  padding: .9rem 1rem;
+.bildplatz { margin: 0 0 1.1rem; }
+.bildplatz img {
+  display: block; width: 100%; height: auto;
+  aspect-ratio: 4 / 3; border-radius: 1rem;
+  background: var(--akzent-hell);
 }
-.bildplatz-rahmen span {
-  font: 600 .75rem var(--sans); letter-spacing: .12em;
-  text-transform: uppercase; color: var(--akzent-dunkel);
-}
-.bildplatz figcaption { margin: .55rem 0 0; font: .9rem/1.45 var(--sans); color: var(--leise); }
 .listicle .aktion { margin: .25rem 0 2.75rem; }
 .danach {
   margin: .5rem 0 2.75rem; padding: 1.5rem 1.35rem 1.6rem;
