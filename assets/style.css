@@ -198,3 +198,90 @@ td:last-child { color: var(--akzent-dunkel); font-weight: 600; }
   .gratis-buehne .anmeldung { width: min(100%, 36rem); }
   .teaser-rahmen { width: min(56vw, 10.5rem); }
 }
+
+/* Verkaufsseite /30-tage/ */
+.heft-kopf {
+  display: grid;
+  grid-template-columns: minmax(12rem, 16.5rem) minmax(0, 34rem);
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem 2.75rem;
+  padding: clamp(1.25rem, 4vw, 3.25rem) 0 .5rem;
+}
+.heft-kauf h1 {
+  font: 700 clamp(2.15rem, 6vw, 3.5rem)/1.08 var(--serif);
+  letter-spacing: -.025em;
+  margin: 0 0 1rem;
+}
+.heft-kauf h1 em { font-style: italic; color: var(--akzent); }
+.heft-kauf .lead { font-size: 1.15rem; color: var(--leise); margin: 0 0 1.35rem; }
+.preis { font: 700 2.5rem/1 var(--serif); letter-spacing: -.03em; margin: 0; }
+.preis-zusatz { font: .95rem/1.4 var(--sans); color: var(--leise); margin: .35rem 0 1.1rem; }
+.kauf-hinweis { font: .9rem/1.5 var(--sans); color: var(--leise); margin: .9rem 0 0; max-width: 32rem; }
+.kauf-hinweis strong { color: var(--tinte); font-weight: 600; }
+.heft-spruenge { font: .9rem var(--sans); color: var(--leise); margin: 1.15rem 0 0; }
+.heft-cover {
+  position: relative;
+  aspect-ratio: 210 / 297;
+  background: var(--karte);
+  border: 1px solid var(--linie);
+  border-radius: .7rem;
+  box-shadow: 0 12px 32px rgba(40, 50, 40, .1);
+  padding: 1.15rem 1.1rem 1.2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.heft-cover-kreis {
+  position: absolute;
+  right: -46%;
+  top: 36%;
+  width: 92%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--akzent-hell);
+}
+.heft-cover-kicker,
+.heft-cover-titel,
+.heft-cover-motto,
+.heft-cover-zahl { position: relative; }
+.heft-cover-kicker {
+  font: 600 .68rem var(--sans);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--akzent-dunkel);
+  margin: 0;
+}
+.heft-cover-zahl {
+  position: absolute;
+  right: .35rem;
+  top: 36%;
+  margin: 0;
+  font: 700 5.4rem/.8 var(--serif);
+  letter-spacing: -.045em;
+  color: var(--akzent);
+}
+.heft-cover-titel {
+  margin: 1.6rem 0 0;
+  max-width: 8.6rem;
+  font: 700 1.85rem/1.05 var(--serif);
+  letter-spacing: -.02em;
+}
+.heft-cover-titel em { font-style: italic; color: var(--akzent); }
+.heft-cover-motto {
+  margin: 0;
+  padding-top: .75rem;
+  border-top: 1px solid var(--linie);
+  font: italic .88rem/1.45 var(--serif);
+  color: var(--akzent-dunkel);
+}
+.aktion .kauf-hinweis { margin-left: auto; margin-right: auto; }
+#verfuegbar { scroll-margin-top: 1.25rem; }
+@media (max-width: 46rem) {
+  .heft-kopf { grid-template-columns: minmax(0, 1fr); }
+  .heft-cover { width: min(12.5rem, 68%); margin: 0 auto; }
+  .heft-cover-titel { max-width: 7rem; font-size: 1.4rem; margin-top: 1.1rem; }
+  .heft-cover-zahl { font-size: 4rem; }
+  .heft-cover-motto { font-size: .78rem; }
+}
