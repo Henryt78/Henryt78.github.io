@@ -198,3 +198,43 @@ td:last-child { color: var(--akzent-dunkel); font-weight: 600; }
   .gratis-buehne .anmeldung { width: min(100%, 36rem); }
   .teaser-rahmen { width: min(56vw, 10.5rem); }
 }
+
+/* Listicle /7-gruende/ */
+.listicle { max-width: 40rem; margin: 0 auto; }
+.listicle-held { text-align: center; padding: clamp(1.5rem, 5vw, 3.5rem) 0 2.75rem; }
+.listicle-held h1 {
+  font: 700 clamp(1.7rem, 5.6vw, 2.85rem)/1.18 var(--serif);
+  letter-spacing: -.02em; margin: 0 0 1rem;
+}
+.listicle-held h1 em { font-style: italic; color: var(--akzent); }
+.listicle-held .lead { font-size: 1.15rem; }
+.listicle-meta { font: .95rem/1.5 var(--sans); color: var(--leise); margin: .85rem 0 0; }
+.grund { margin: 0 0 2.75rem; }
+.grund .kicker { margin-bottom: .4rem; }
+.grund h2 { font: 700 1.55rem/1.25 var(--serif); letter-spacing: -.015em; margin: 0 0 1rem; }
+.grund p:last-child { margin: 0; }
+.bildplatz { margin: 0 0 1.1rem; }
+.bildplatz img {
+  display: block; width: 100%; height: auto;
+  aspect-ratio: 4 / 3; border-radius: 1rem;
+  background: var(--akzent-hell);
+}
+.listicle .aktion { margin: .25rem 0 2.75rem; }
+.danach {
+  margin: .5rem 0 2.75rem; padding: 1.5rem 1.35rem 1.6rem;
+  border: 1px solid var(--linie); border-radius: 1rem; background: var(--karte);
+}
+.danach h2 { font: 700 1.45rem/1.3 var(--serif); margin: 0 0 .75rem; }
+.danach > p:last-child { margin: 0; }
+.bald {
+  display: inline-block; margin: 0 0 .75rem;
+  font: 600 .72rem/1 var(--sans); letter-spacing: .08em; text-transform: uppercase;
+  color: var(--akzent-dunkel); background: var(--akzent-hell);
+  border-radius: 999px; padding: .4rem .7rem;
+}
+.listicle-faq > h2 { font: 700 1.6rem var(--serif); margin: 0 0 1.25rem; }
+.listicle-cover { width: min(11rem, 46vw); margin: 0 auto 1.15rem; }
+#anmeldung { scroll-margin-top: 1.25rem; }
+@media (max-width: 34rem) {
+  .listicle-held .knopf, .listicle .aktion .knopf { display: block; }
+}
