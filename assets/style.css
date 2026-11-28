@@ -69,6 +69,7 @@ main { max-width: 62rem; margin: 0 auto; padding: 0 1.25rem; }
 /* Karten */
 .liste h2, .mehr h2 { font: 700 1.6rem var(--serif); margin: 0 0 1.5rem; }
 .karten { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1.1rem; }
+.karten + .karten { margin-top: 1.1rem; }
 .karte {
   position: relative; display: flex; flex-direction: column; height: 100%;
   background: var(--karte); border: 1px solid var(--linie); border-radius: 1rem;
